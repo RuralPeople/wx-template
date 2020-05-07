@@ -1,0 +1,29 @@
+<import src="../template/template.wxml"/>
+
+<cu-custom bgColor="bg-gradual-orange">
+    <view slot="content">创建模板</view>
+</cu-custom>
+<template is="input-box"/>
+<template is="switch-box"/>
+<template is="time-box"/>
+<template is="date-box"/>
+<template is="pic-upload-box"/>
+
+
+<button class="cu-btn block line-orange lg upload-btn" bindtap="showModal" data-target="DrawerModalL">
+    <text class="cuIcon-upload"></text>
+    选择模板
+</button>
+
+
+<view class="cu-modal drawer-modal justify-start {{modalName=='DrawerModalL'?'show':''}}" bindtap="hideModal">
+  <view class="cu-dialog basis-lg" catchtap style="top:{{CustomBar}}px;height:calc(100vh - {{CustomBar}}px)">
+    <view class="cu-list menu text-left">
+      <view class="cu-item arrow" wx:for="{{viewList}}" wx:key>
+        <view class="content">
+          <view>{{item}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
