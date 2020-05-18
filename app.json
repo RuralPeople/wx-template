@@ -1,6 +1,11 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/editIntervalTimeView/editIntervalTimeView",
+    "pages/editInputView/editInputView",
+    "pages/editSelectView/editSelectView",
+    "pages/editTimeView/editTimeView",
+    "pages/editDateView/editDateView",
     "pages/template/template"
   ],
   "window": {

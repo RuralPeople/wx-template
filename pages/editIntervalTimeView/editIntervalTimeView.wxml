@@ -1,0 +1,47 @@
+<cu-custom bgColor="bg-gradual-orange" isBack="{{true}}">
+    <view slot="backText">返回</view>
+    <view slot="content">时间区间选择题</view>
+</cu-custom>
+        <!--输入框的标题-->
+<view class="cu-bar bg-white solid-bottom">
+    <view class="action">
+        <text class="cuIcon-title text-blue"></text>基础设置
+    </view>
+</view>
+<view class="cu-bar bg-white solid-bottom">
+    <view class="cu-form-group">
+        <view class="title">标题：</view>
+        <input placeholder="请输入题目的标题"></input>
+    </view>
+</view>
+<view class="cu-bar bg-white solid-bottom">
+    <view class="cu-form-group">
+        <view class="title">起始：</view>
+        <input placeholder="请选择起始的范围"></input>
+    </view>
+</view>
+<view class="cu-bar bg-white solid-bottom">
+    <view class="cu-form-group">
+        <view class="title">结束：</view>
+        <input placeholder="请选择结束的范围"></input>
+    </view>
+</view>
+
+        <!--逻辑控制-->
+<view class="cu-bar bg-white solid-bottom margin-top">
+    <view class="action">
+        <text class="cuIcon-title text-blue"></text>逻辑控制
+    </view>
+</view>
+<view class="cu-form-group">
+    <view class="title">是否必填（默认必填）</view>
+    <switch class="orange radius sm" checked></switch>
+</view>
+<view class="btn-box">
+    <button class="cu-btn block line-orange lg btn-cancel" bindtap="btnCancel">
+        取消
+    </button>
+    <button class="cu-btn block bg-orange lg btn-save" bindtap="btnSave">
+        保存
+    </button>
+</view>

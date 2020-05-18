@@ -1,8 +1,8 @@
 <!--输入框-->
 <template name="input-box">
     <view class="cu-form-group">
-        <view class="title">输入标题</view>
-        <input placeholder="输入提示"></input>
+        <view class="title">{{label}}</view>
+        <input placeholder="{{help}}"></input>
     </view>
 </template>
 
