@@ -1,0 +1,40 @@
+<cu-custom bgColor="bg-gradual-orange" isBack="{{true}}">
+    <view slot="backText">返回</view>
+    <view slot="content">填空题</view>
+</cu-custom>
+        <!--输入框的标题-->
+<view class="cu-bar bg-white solid-bottom">
+    <view class="action">
+        <text class="cuIcon-title text-blue"></text>基础设置
+    </view>
+</view>
+<view class="cu-bar bg-white solid-bottom">
+    <view class="cu-form-group">
+        <view class="title">标题：</view>
+        <input placeholder="请输入选项的标题" id="input-title"  bindinput="get_input_title"></input>
+    </view>
+</view>
+<view class="cu-bar bg-white solid-bottom">
+    <view class="cu-form-group">
+        <view class="title">提示语：</view>
+        <input placeholder="请输入选项的提示语" id="input-placeholder"  bindinput="get_input_placeholder"></input>
+    </view>
+</view>
+        <!--逻辑控制-->
+<view class="cu-bar bg-white solid-bottom margin-top">
+    <view class="action">
+        <text class="cuIcon-title text-blue"></text>逻辑控制
+    </view>
+</view>
+<view class="cu-form-group">
+    <view class="title">是否必填（默认必填）</view>
+    <switch class="orange radius sm" checked id="check-required"></switch>
+</view>
+<view class="btn-box">
+    <button class="cu-btn block line-orange lg btn-cancel" bindtap="btn_cancel">
+        取消
+    </button>
+    <button class="cu-btn block bg-orange lg btn-save" bindtap="btn_save">
+        保存
+    </button>
+</view>
