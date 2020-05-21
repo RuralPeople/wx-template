@@ -1,66 +1,39 @@
 // pages/editTimeView/editTimeView.js
 Page({
 
-  /**
-   * 页面的初始数据
-   */
+
   data: {
-
+    title_str: "",
+    placeholder_str: "",
+    bean: {
+      id: "",
+      readOnly: false,
+      label: "",
+      type: "TYPE_TIMESTAMP_TEXT",
+      defaultValue: "",
+      help: "",
+      required: false,
+    }
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  get_input_title: function (e) {
+    this.setData({
+      title_str: e.detail.value
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  btnCancel(e) {
+    wx.navigateBack()
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  btnSave(e) {
+    this.data.bean.label = this.data.title_str
+    var pages = getCurrentPages();
+    var prevPage = pages[pages.length - 2];
+    var list = prevPage.data.dataList
+    list.push(this.data.bean)
+    prevPage.setData({
+      dataList: list
+    });
+    wx.navigateBack({
+      delta: 1
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
 })

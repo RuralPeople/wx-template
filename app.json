@@ -6,7 +6,9 @@
     "pages/editSelectView/editSelectView",
     "pages/editTimeView/editTimeView",
     "pages/editDateView/editDateView",
-    "pages/template/template"
+    "pages/template/template",
+    "pages/edituploadpic/edituploadpic",
+    "pages/selectBox/selectBox"
   ],
   "window": {
     "backgroundTextStyle": "light",

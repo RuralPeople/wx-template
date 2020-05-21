@@ -11,7 +11,7 @@
 <view class="cu-bar bg-white solid-bottom">
     <view class="cu-form-group">
         <view class="title">标题：</view>
-        <input placeholder="请输入题目的标题"></input>
+        <input placeholder="请输入题目的标题" bindinput="get_input_title"></input>
     </view>
 </view>
 

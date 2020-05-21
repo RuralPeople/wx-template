@@ -5,18 +5,76 @@
 </cu-custom>
 
 <view wx:for="{{dataList}}" wx:key>
-    <template wx:if="{{item.type=='TYPE_INPUT_TEXT'}}" is="input-box" data="{{...item}}"/>
-    <template wx:if="{{item.type=='TYPE_SELECT'}}" is="switch-box"/>
-    <template wx:if="{{item==3}}" is="time-box"/>
-    <template wx:if="{{item==4}}" is="date-box"/>
-    <template wx:if="{{item==5}}" is="pic-upload-box"/>
+    <view wx:if="{{item.type=='TYPE_INPUT_TEXT'}}">
+        <view class="cu-form-group ">
+            <view class="title">{{item.label}}</view>
+            <input placeholder="{{item.help}}"></input>
+        </view>
+    </view>
+    <view wx:if="{{item.type=='TYPE_SELECT'}}" >
+        <view class="cu-form-group margin-top">
+            <view class="title">{{item.label}}</view>
+            <picker bindchange="PickerChange" value="{{selectIndex}}" range="{{item.select_options}}">
+                <view class="picker">
+                    {{selectIndex?item.select_options[selectIndex]:'请选择'}}
+                </view>
+            </picker>
+        </view>
+    </view>
+    <view wx:if="{{item.type=='TYPE_DATE_TEXT'}}" >
+        <view class="cu-form-group margin-top">
+            <view class="title">{{item.label}}</view>
+            <picker mode="date" value="{{date}}" start="2015-09-01" end="2020-09-01" bindchange="DateChange">
+                <view class="picker">
+                    {{date}}
+                </view>
+            </picker>
+        </view>
+    </view>
+    <view wx:if="{{item.type=='TYPE_TIMESTAMP_TEXT'}}" >
+        <view class="cu-form-group margin-top">
+            <view class="title">{{item.label}}</view>
+            <picker mode="time" value="{{time}}" start="09:01" end="21:01" bindchange="TimeChange">
+                <view class="picker">
+                    {{time}}
+                </view>
+            </picker>
+        </view>
+    </view>
+    <view wx:if="{{item.type=='TYPE_PIC'}}" >
+        <view class="cu-bar bg-white margin-top">
+            <view class="action">
+                图片上传
+            </view>
+            <view class="action">
+                {{imgList.length}}/4
+            </view>
+        </view>
+        <view class="cu-form-group">
+            <view class="grid col-4 grid-square flex-sub">
+                <view class="bg-img" wx:for="{{imgList}}" wx:key="{{index}}" bindtap="ViewImage" data-url="{{imgList[index]}}">
+                    <image src='{{imgList[index]}}' mode='aspectFill'></image>
+                    <view class="cu-tag bg-red" catchtap="DelImg" data-index="{{index}}">
+                        <text class="cuIcon-close"></text>
+                    </view>
+                </view>
+                <view class="solids" bindtap="ChooseImage" wx:if="{{imgList.length<4}}">
+                    <text class="cuIcon-cameraadd"></text>
+                </view>
+            </view>
+        </view>
+    </view>
 </view>
 
 
-<button class="cu-btn block line-orange lg upload-btn" bindtap="showModal" data-target="DrawerModalL">
-    <text class="cuIcon-upload"></text>
-    选择模板
-</button>
+<view class="btn-box">
+    <button class="cu-btn block line-orange lg btn-cancel" bindtap="showModal" data-target="DrawerModalL">
+        添加
+    </button>
+    <button class="cu-btn block bg-orange lg btn-save" bindtap="btnSave">
+        保存
+    </button>
+</view>
 
 
 <view class="cu-modal drawer-modal justify-start {{modalName=='DrawerModalL'?'show':''}}" bindtap="hideModal">

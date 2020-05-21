@@ -3,3 +3,20 @@
     bottom: 0;
     width: 100%;
 }
+
+.btn-save {
+    flex: 1.5;
+    margin-left: 10rpx;
+    margin-right: 20rpx;
+}
+
+.btn-cancel {
+    flex: 1;
+    margin-right: 10rpx;
+    margin-left: 20rpx;
+}
+
+.btn-box {
+    margin-top: 100rpx;
+    display: flex;
+}

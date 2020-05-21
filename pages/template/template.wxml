@@ -6,7 +6,17 @@
     </view>
 </template>
 
-<!--滑块开关选择-->
+<template name="select-box">
+    <view class="cu-form-group">
+        <view class="title">{{label}}</view>
+        <picker bindchange="PickerChange" value="{{index}}" range="{{select_options}}">
+            <view class="picker">
+                {{index?select_options[index]:'请选择'}}
+            </view>
+        </picker>
+    </view>
+</template>
+        <!--滑块开关选择-->
 <template name="switch-box">
     <view class="cu-form-group">
         <view class="title">开关选择</view>
@@ -14,7 +24,7 @@
     </view>
 </template>
 
-<!--时间选择-->
+        <!--时间选择-->
 <template name="time-box">
     <view class="cu-form-group">
         <view class="title">时间选择</view>
@@ -26,7 +36,7 @@
     </view>
 </template>
 
-<!--日期选择-->
+        <!--日期选择-->
 <template name="date-box">
     <view class="cu-form-group">
         <view class="title">日期选择</view>
@@ -38,7 +48,7 @@
     </view>
 </template>
 
-<!--图片上传-->
+        <!--图片上传-->
 <template name="pic-upload-box">
     <view class="cu-bar bg-white margin-top">
         <view class="action">
