@@ -1,0 +1,8 @@
+<view class="cu-form-group">
+    <view class="title">{{label}}</view>
+    <picker bindchange="PickerChange" value="{{index}}" range="{{select_options}}">
+        <view class="picker">
+            {{index?select_options[index]:'请选择'}}
+        </view>
+    </picker>
+</view>
